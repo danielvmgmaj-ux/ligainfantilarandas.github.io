@@ -1,6 +1,3 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
-import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc, onSnapshot } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js";
-import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-storage.js";
 
 // CONFIGURACIÓN DE TU PROYECTO FIREBASE
 const firebaseConfig = {
@@ -13,9 +10,9 @@ const firebaseConfig = {
     measurementId: "G-CBP7V18WN0"
   };
 // Inicializar Firebase
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-const storage = getStorage(app);
+const app = firebase.initializeApp(firebaseConfig);
+const db = firebase.getFirestore(app);
+const storage = firebase.getStorage(app);
 
 // Referencia de UI
 const jugadorForm = document.getElementById('jugador-form');
