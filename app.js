@@ -4,14 +4,14 @@ import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstati
 
 // CONFIGURACIÓN DE TU PROYECTO FIREBASE
 const firebaseConfig = {
-    apiKey: "TU_API_KEY",
-    authDomain: "TU_AUTH_DOMAIN",
-    projectId: "TU_PROJECT_ID",
-    storageBucket: "TU_STORAGE_BUCKET",
-    messagingSenderId: "TU_MESSAGING_SENDER_ID",
-    appId: "TU_APP_ID"
-};
-
+    apiKey: "AIzaSyCLAW1XF5BHDB_-4pw7rVDLklVfiuIo6Zo",
+    authDomain: "ligainfantilarandas-24843.firebaseapp.com",
+    projectId: "ligainfantilarandas-24843",
+    storageBucket: "ligainfantilarandas-24843.firebasestorage.app",
+    messagingSenderId: "1034062664324",
+    appId: "1:1034062664324:web:2400493fea676e1ff968d1",
+    measurementId: "G-CBP7V18WN0"
+  };
 // Inicializar Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
