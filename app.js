@@ -82,12 +82,12 @@ jugadorForm.addEventListener('submit', async (e) => {
 
     try {
         // 1. Subir Foto a Firebase Storage
-        const storageRef = ref(storage, `fotos_jugadores/${Date.now()}_${fotoArchivo.name}`);
+        const storageRef = firebase.ref(storage, `fotos_jugadores/${Date.now()}_${fotoArchivo.name}`);
         const snapshot = await uploadBytes(storageRef, fotoArchivo);
         const fotoUrl = await getDownloadURL(snapshot.ref);
 
         // 2. Guardar metadata en Firestore
-        await addDoc(collection(db, "jugadores"), {
+        await firebase.addDoc(collection(db, "jugadores"), {
             temporada,
             equipo,
             nombre,
@@ -108,7 +108,7 @@ jugadorForm.addEventListener('submit', async (e) => {
 window.eliminarJugador = async function(id) {
     if(confirm("¿Estás seguro de que deseas eliminar este jugador de la base de datos?")) {
         try {
-            await deleteDoc(doc(db, "jugadores", id));
+            await firebase.deleteDoc(doc(db, "jugadores", id));
         } catch (error) {
             console.error("Error al eliminar:", error);
         }
